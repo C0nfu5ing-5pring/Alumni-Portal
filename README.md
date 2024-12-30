@@ -38,7 +38,7 @@ Developed by **Shish**, **Dhruvinsinh**, and **Harshit**, the portal fosters con
 
 ## 🤝 **Contributors**  
 
-- **Shish**  
+- **Shish Fruitwala**  
 - **Dhruvinsinh Solanki**  
 - **Harshit Sharma**  
 
