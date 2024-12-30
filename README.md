@@ -42,8 +42,6 @@ Developed by **Shish**, **Dhruvinsinh**, and **Harshit**, the portal fosters con
 - **Dhruvinsinh Solanki**  
 - **Harshit Sharma**  
 
-We’d love to hear your feedback! Feel free to reach out or contribute to this project by creating a pull request.  
-
 ---
 
 ## 📄 **License**  
