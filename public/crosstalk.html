@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://bbpsgr.balbharati.org/wp-content/themes/balbhartisub/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/my-node-app/public/output.css" />
+    <title>Crosstalk - BBPS Alumni Community</title>
+  </head>
+
+  <body id="main" class="bg-[#E0F2EF]">
+    <div
+      id="cursor"
+      class="h-[10px] w-[10px] fixed z-50 bg-black rounded-full"
+    ></div>
+    <audio id="song" autoplay loop>
+      <source src="song.mp3" />
+    </audio>
+
+    <header class="flex bg-[#199D8D] justify-between px-5 py-3 align-middle">
+      <div class="my-auto">
+        <a
+          href="about.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >About us</a
+        >
+
+        &nbsp;
+        <a
+          href="network.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Network</a
+        >
+
+        &nbsp;
+        <a
+          href="events.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Events</a
+        >
+
+        &nbsp;
+        <a
+          href="videoGalore.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Video Galore</a
+        >
+        &nbsp;
+        <a
+          href="notableAlumnis.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Notable Alumnus</a
+        >
+        &nbsp;
+        <a
+          href="bbpsBugle.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >BBPS Bugle</a
+        >
+        &nbsp;
+        <a
+          href="meetup.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Let's Meet</a
+        >
+      </div>
+
+      <div class="flex align-middle justify-center my-auto">
+        <div
+          class="bg-white box text-black h-12 w-12 border-[#FFDE00] border-solid border-2 rounded-full"
+          id="profile-picture"
+        ></div>
+      </div>
+    </header>
+
+    <section class="bg-[#199D8D20] p-10">
+      <div>
+        <div class="flex justify-between pr-16">
+          <h1 class="text-6xl font-bold text-[#199D8D]" id="display-heading">
+            Crosstalk
+          </h1>
+        </div>
+
+        <div class="pr-16">
+          <div
+            class="mt-4 border-t border-4 border-solid border-[#FFDE00]"
+          ></div>
+
+          <div class="border-t border-4 border-solid border-[#199D8D]"></div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="message-list"
+      class="p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10 px-6 md:px-12 lg:px-16"
+    ></div>
+
+    <div class="relative box flex justify-center">
+      <div
+        class="fixed bottom-4 border-solid border-4 border-[#FFDE00] bg-[#199D8D90] p-3 rounded-2xl"
+        id="message-div"
+      >
+        <input
+          type="text"
+          id="user"
+          placeholder="Enter your name"
+          class="p-1 rounded-md"
+        />
+        <input
+          type="text"
+          id="message"
+          placeholder="Post something"
+          class="p-1 rounded-md"
+          required
+        />
+        &nbsp;
+        <form id="form1" class="flex justify-center mt-3">
+          <button class="bg-[#199D8D] text-[#FFDE00] p-2 rounded-lg mt-1">
+            Post
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="relative">
+      <img
+        src="images/vol-up.png"
+        class="volume-icon z-[30] h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeUpIcon"
+        alt="Volume Icon"
+      />
+
+      <img
+        src="images/vol-down.png"
+        class="volume-icon z-[30] hidden h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeDownIcon"
+        alt="Volume Icon"
+      />
+    </div>
+
+    <script>
+      const profilePicture = localStorage.getItem("profilePicture");
+
+      if (profilePicture) {
+        const profileDiv = document.getElementById("profile-picture");
+        profileDiv.style.backgroundImage = `url(${profilePicture})`;
+        profileDiv.style.backgroundSize = "cover";
+        profileDiv.style.backgroundPosition = "center";
+      }
+
+      const volumeUpIcon = document.getElementById("volumeUpIcon");
+      const volumeDownIcon = document.getElementById("volumeDownIcon");
+      const audio = document.getElementById("song");
+
+      volumeUpIcon.addEventListener("click", () => {
+        volumeUpIcon.classList.add("hidden");
+        volumeDownIcon.classList.remove("hidden");
+        audio.pause();
+      });
+
+      volumeDownIcon.addEventListener("click", () => {
+        volumeDownIcon.classList.add("hidden");
+        volumeUpIcon.classList.remove("hidden");
+        audio.play();
+      });
+
+      document.getElementById("song").volume = 0.4;
+    </script>
+
+    <script>
+      document
+        .getElementById("form1")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          let user = document.getElementById("user");
+          if (user.value.length > 0) {
+            user = user.value;
+          } else {
+            user = "Anonymous";
+          }
+          const message = document.getElementById("message").value;
+
+          const messageData = {
+            user: user,
+            message: message,
+          };
+
+          try {
+            const response = await fetch("http://localhost:3000/message", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(messageData),
+            });
+
+            if (!response.ok) {
+              throw new Error(`Server error: ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            if (result.success) {
+              alert("Message added successfully!");
+              location.reload();
+            } else {
+              alert("Error submitting event.");
+              console.error(result);
+            }
+          } catch (error) {
+            console.error("Submission Error:", error);
+            alert(`There was a problem adding the event: ${error.message}`);
+          }
+        });
+    </script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="animation.js"></script>
+    <script src="fetchMessasges.js"></script>
+  </body>
+</html>

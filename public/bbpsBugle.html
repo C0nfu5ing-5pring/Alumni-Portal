@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://bbpsgr.balbharati.org/wp-content/themes/balbhartisub/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>BBPS Bugle - BBPS Alumni Community</title>
+
+    <style>
+      .masonry-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: 10px;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .masonry-item {
+        grid-row-end: span 30;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .masonry-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .masonry-item:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body class="h-screen w-screen bg-[#E0F2EF] overflow-x-hidden" id="main">
+    <div
+      id="cursor"
+      class="h-[10px] w-[10px] fixed z-50 bg-black rounded-full"
+    ></div>
+
+    <audio id="song" autoplay loop>
+      <source src="song.mp3" />
+    </audio>
+    <header class="flex justify-between items-center bg-[#199D8D] px-5 py-3">
+      <div class="space-x-4">
+        <a
+          href="about.html"
+          class="text-xl bg-[#FFDE00] px-2 py-1 rounded-md shadow-md hover:shadow-xl"
+        >
+          About us
+        </a>
+
+        <a
+          href="events.html"
+          class="text-xl bg-[#FFDE00] px-2 py-1 rounded-md shadow-md hover:shadow-xl"
+        >
+          Events
+        </a>
+        <a
+          href="network.html"
+          class="text-xl bg-[#FFDE00] px-2 py-1 rounded-md shadow-md hover:shadow-xl"
+        >
+          Network
+        </a>
+        <a
+          href="crosstalk.html"
+          class="text-xl bg-[#FFDE00] px-2 py-1 rounded-md shadow-md hover:shadow-xl"
+        >
+          Crosstalk
+        </a>
+        <a
+          href="videoGalore.html"
+          class="text-xl bg-[#FFDE00] px-2 py-1 rounded-md shadow-md hover:shadow-xl"
+        >
+          Video Galore
+        </a>
+        <a
+          href="notableAlumnis.html"
+          class="text-xl bg-[#FFDE00] px-2 py-1 rounded-md shadow-md hover:shadow-xl"
+        >
+          Notable Alumnus
+        </a>
+        <a
+          href="meetup.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Let's meet</a
+        >
+      </div>
+      <div
+        class="bg-white border-2 border-[#FFDE00] h-12 w-12 rounded-full"
+        id="profile-picture"
+      ></div>
+    </header>
+
+    <section class="bg-[#199D8D20] p-10">
+      <div class="pr-16" id="display-heading">
+        <h1 class="text-6xl font-bold text-[#199D8D]">BBPS Bugle</h1>
+      </div>
+      <div class="pr-16 mt-4">
+        <div class="border-t-4 border-[#FFDE00]"></div>
+        <div class="border-t-4 border-[#199D8D]"></div>
+      </div>
+    </section>
+
+    <div
+      class="columns-3 gap-4 p-6 max-w-6xl mx-auto md:columns-2 sm:columns-1"
+    >
+      <div class="break-inside-avoid mb-4">
+        <img
+          src="images/News1.jpg"
+          alt="News 1"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+      <div class="break-inside-avoid mb-4">
+        <img
+          src="images/News2.jpg"
+          alt="News 2"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+      <div class="break-inside-avoid mb-4">
+        <img
+          src="images/News3.png"
+          alt="News 3"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+      <div class="break-inside-avoid mb-4">
+        <img
+          src="images/News4.png"
+          alt="News 4"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+      <div class="break-inside-avoid mb-4">
+        <img
+          src="images/News5.png"
+          alt="News 5"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+      <div class="break-inside-avoid mb-4">
+        <img
+          src="images/News6.jpg"
+          alt="News 6"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+      <div class="break-inside-avoid mb-4">
+        <img
+          src="images/News7.jpg"
+          alt="News 7"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+      <div class="break-inside-avoid mb-4">
+        <img
+          src="images/News8.jpg"
+          alt="News 8"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+    </div>
+
+    <div class="fixed bottom-2 right-2">
+      <img
+        src="images/vol-up.png"
+        id="volumeUpIcon"
+        class="h-10 w-10 bg-[#199D8D90] rounded-lg"
+        alt="Volume Icon"
+      />
+      <img
+        src="images/vol-down.png"
+        id="volumeDownIcon"
+        class="hidden h-10 w-10 bg-[#199D8D90] rounded-lg"
+        alt="Volume Icon"
+      />
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="animation.js"></script>
+
+    <script>
+      const profilePicture = localStorage.getItem("profilePicture");
+      if (profilePicture) {
+        const profileDiv = document.getElementById("profile-picture");
+        profileDiv.style.backgroundImage = `url(${profilePicture})`;
+        profileDiv.style.backgroundSize = "cover";
+        profileDiv.style.backgroundPosition = "center";
+      }
+
+      const volumeUpIcon = document.getElementById("volumeUpIcon");
+      const volumeDownIcon = document.getElementById("volumeDownIcon");
+      const audio = document.getElementById("song");
+
+      volumeUpIcon.addEventListener("click", () => {
+        volumeUpIcon.classList.add("hidden");
+        volumeDownIcon.classList.remove("hidden");
+        audio.pause();
+      });
+
+      volumeDownIcon.addEventListener("click", () => {
+        volumeDownIcon.classList.add("hidden");
+        volumeUpIcon.classList.remove("hidden");
+        audio.play();
+      });
+
+      song.volume = 0.4;
+    </script>
+  </body>
+</html>

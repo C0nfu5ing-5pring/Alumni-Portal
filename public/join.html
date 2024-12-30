@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://bbpsgr.balbharati.org/wp-content/themes/balbhartisub/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="/my-node-app/public/output.css" />
+
+    <title>Join - BBPS Alumni Community</title>
+
+    <style>
+      @media (max-width: 640px) {
+        #card {
+          width: 90% !important;
+
+          padding: 16px !important;
+        }
+
+        input,
+        label {
+          font-size: 14px !important;
+        }
+
+        #submitBtn {
+          padding: 10px !important;
+
+          font-size: 14px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="main" class="cursor-none">
+    <div
+      id="cursor"
+      class="h-[10px] w-[10px] fixed z-50 bg-black rounded-full"
+    ></div>
+
+    <audio id="song" autoplay loop>
+      <source src="song.mp3" />
+    </audio>
+
+    <section>
+      <div class="relative h-screen">
+        <img
+          src="/my-node-app/public/images/join-login.png"
+          class="h-full w-full object-cover bg-no-repeat"
+          alt="Join BBPS Alumni"
+        />
+
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white shadow-2xl p-4 sm:p-6 flex flex-col w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%]"
+          id="card"
+        >
+          <div class="mb-6 flex justify-center">
+            <img
+              src="/my-node-app/public/images/bbps-logo.jpg"
+              alt="Bal Bharati Public School"
+              id="bbps-logo"
+            />
+          </div>
+
+          <div
+            class="text-3xl sm:text-4xl lg:text-5xl text-center text-[#199D8D] my-1 font-semibold"
+            id="heading"
+          >
+            Join
+          </div>
+
+          <form
+            class="mt-4 sm:mt-6"
+            id="form"
+            action="http://localhost:3000/submit-form"
+          >
+            <div class="space-y-4 sm:space-y-5">
+              <div>
+                <label
+                  for="name"
+                  class="text-sm sm:text-base font-medium text-gray-900"
+                >
+                  Full Name <span class="text-red-800">*</span>
+                </label>
+                <div class="mt-1 sm:mt-2">
+                  <input
+                    class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1"
+                    type="text"
+                    placeholder="Enter your full name"
+                    id="userName"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="batch"
+                  class="text-sm sm:text-base font-medium text-gray-900"
+                >
+                  Batch <span class="text-red-800">*</span>
+                </label>
+                <div class="mt-1 sm:mt-2">
+                  <input
+                    class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1"
+                    type="number"
+                    placeholder="Enter your batch (year of enrollment)"
+                    id="batch"
+                    required
+                    maxlength="4"
+                    minlength="4"
+                    max="2023"
+                    min="1944"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="jobStatus"
+                  class="text-sm sm:text-base font-medium text-gray-900"
+                >
+                  Current Job Status <span class="text-red-800">*</span>
+                </label>
+                <div class="mt-1 sm:mt-2">
+                  <input
+                    class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1"
+                    type="text"
+                    placeholder="Enter your current job status"
+                    id="jobStatus"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="text-sm sm:text-base font-medium text-gray-900"
+                >
+                  Email <span class="text-red-800">*</span>
+                </label>
+                <div class="mt-1 sm:mt-2">
+                  <input
+                    class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1"
+                    type="email"
+                    placeholder="Enter your email address"
+                    id="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="mobile"
+                  class="text-sm sm:text-base font-medium text-gray-900"
+                >
+                  Mobile number <span class="text-red-800">*</span>
+                </label>
+                <div class="mt-1 sm:mt-2">
+                  <input
+                    class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1"
+                    type="tel"
+                    pattern="[0-9]*"
+                    placeholder="Enter your mobile number"
+                    id="mobile"
+                    required
+                    maxlength="10"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="social"
+                  class="text-sm sm:text-base font-medium text-gray-900"
+                >
+                  Social media
+                </label>
+                <div class="mt-1 sm:mt-2">
+                  <input
+                    class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1"
+                    type="text"
+                    id="social"
+                    placeholder="Your social media account link (if any)"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between">
+                  <label
+                    for="password"
+                    class="text-sm sm:text-base font-medium text-gray-900"
+                  >
+                    Create password <span class="text-red-800">*</span>
+                  </label>
+                </div>
+                <div class="mt-1 sm:mt-2">
+                  <input
+                    class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1"
+                    type="password"
+                    placeholder="Create password"
+                    id="password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  class="inline-flex box w-full items-center justify-center rounded-md px-3.5 py-2.5 font-semibold leading-7 text-white bg-[#d1d5db] transition-colors duration-300 hover:bg-[#199D8D]"
+                  id="submitBtn"
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative">
+      <img
+        src="images/vol-up.png"
+        class="volume-icon z-[30] h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeUpIcon"
+        alt="Volume Icon"
+      />
+
+      <img
+        src="images/vol-down.png"
+        class="volume-icon z-[30] hidden h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeDownIcon"
+        alt="Volume Icon"
+      />
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      document
+        .getElementById("form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const userName = document.getElementById("userName").value;
+          const jobStatus = document.getElementById("jobStatus").value;
+          const mobile = document.getElementById("mobile").value;
+          const social = document.getElementById("social").value;
+          const batch = document.getElementById("batch").value;
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const error = document.getElementById("error");
+
+          let upCase = 0;
+          let lowCase = 0;
+          let num = 0;
+
+          if (password.length < 8) {
+            error.innerHTML =
+              "Your password should contain 8 or more characters";
+            return;
+          }
+
+          for (let index = 0; index < password.length; index++) {
+            const element = password[index];
+
+            if (/\d/.test(element)) num++;
+            if (/[A-Z]/.test(element)) upCase++;
+            if (/[a-z]/.test(element)) lowCase++;
+          }
+
+          if (num < 1 || upCase < 1 || lowCase < 1) {
+            error.innerHTML =
+              "Your password should have at least 1 uppercase, 1 lowercase, and 1 number";
+          } else {
+            error.innerHTML = "";
+          }
+
+          const formData = {
+            userName: userName,
+            jobStatus: jobStatus,
+            mobile: mobile,
+            social: social,
+            batch: batch,
+            email: email,
+            password: password,
+          };
+
+          try {
+            const response = await fetch("http://localhost:3000/submit-form", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+              alert("Form submitted successfully!");
+              window.location.href = "/my-node-app/public/events.html";
+            } else {
+              alert("Error submitting form or account already exists");
+              console.error(result);
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("There was a problem with the submission.");
+          }
+        });
+
+      const volumeUpIcon = document.getElementById("volumeUpIcon");
+
+      const volumeDownIcon = document.getElementById("volumeDownIcon");
+
+      const audio = document.getElementById("song");
+
+      volumeUpIcon.addEventListener("click", () => {
+        volumeUpIcon.classList.add("hidden");
+
+        volumeDownIcon.classList.remove("hidden");
+
+        audio.pause();
+      });
+
+      volumeDownIcon.addEventListener("click", () => {
+        volumeDownIcon.classList.add("hidden");
+
+        volumeUpIcon.classList.remove("hidden");
+
+        audio.play();
+      });
+
+      document.getElementById("song").volume = 0.0;
+    </script>
+
+    <script src="animation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://bbpsgr.balbharati.org/wp-content/themes/balbhartisub/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="output.css" />
+    <title>City Map - BBPS Alumni Community</title>
+  </head>
+  <body class="h-screen flex justify-center items-center bg-[#DEF0ED]">
+    <div class="text-center space-y-6">
+      <h1 class="text-3xl font-bold">Available Meetup Location of Alumni</h1>
+      <button
+        id="fetchCityBtn"
+        class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-[#199D8D] transition"
+      >
+        Fetch City and Show Map
+      </button>
+      <div
+        id="map"
+        class="h-[300px] w-[400px] border-2 mx-auto border-[#199D8D] rounded-md"
+      ></div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./animation.js"></script>
+
+    <script>
+      const apiKey = "AIzaSyBO-adzXRmO_xfXDtryT4XG6eMU6NvMqUg";
+
+      async function fetchCityFromServer() {
+        try {
+          const response = await fetch("http://localhost:3000/mapdemo");
+          const data = await response.json();
+          if (data.success && data.meetups.length > 0) {
+            return data.meetups[0].city;
+          } else {
+            throw new Error("No city data available.");
+          }
+        } catch (error) {
+          alert("Error fetching city: " + error.message);
+          throw error;
+        }
+      }
+
+      async function getCityCoordinates(city) {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0c07cd450d4c950685c14f8f48cd185e`;
+        const response = await fetch(url);
+        const data = await response.json();
+        return {
+          lat: data.coord.lat,
+          lon: data.coord.lon,
+        };
+      }
+
+      function initMap(lat, lon) {
+        const location = { lat, lng: lon };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: location,
+        });
+        new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+      }
+
+      document
+        .getElementById("fetchCityBtn")
+        .addEventListener("click", async () => {
+          try {
+            const city = await fetchCityFromServer();
+            const { lat, lon } = await getCityCoordinates(city);
+            initMap(lat, lon);
+          } catch (error) {
+            console.error("Error displaying map:", error);
+          }
+        });
+    </script>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO-adzXRmO_xfXDtryT4XG6eMU6NvMqUg"
+    ></script>
+  </body>
+</html>

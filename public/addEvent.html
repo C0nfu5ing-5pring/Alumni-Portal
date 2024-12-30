@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://bbpsgr.balbharati.org/wp-content/themes/balbhartisub/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/my-node-app/public/output.css" />
+    <title>Add event - BBPS Alumni Community</title>
+    <style>
+      @media (max-width: 640px) {
+        #card {
+          width: 90% !important;
+          padding: 16px !important;
+        }
+        input,
+        textarea,
+        label {
+          font-size: 14px !important;
+        }
+        #submitBtn {
+          padding: 10px !important;
+          font-size: 14px !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="w-screen cursor-none h-screen scrollbar-w-1 scrollbar-thin scrollbar-track-[#199D8D] scrollbar-thumb-[#FFDE00]"
+    id="main"
+  >
+    <audio autoplay loop id="song">
+      <source src="song.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div
+      id="cursor"
+      class="h-[10px] w-[10px] fixed z-50 bg-black rounded-full"
+    ></div>
+    <section>
+      <div class="relative">
+        <img
+          src="/my-node-app/public/images/events.png"
+          class="h-screen w-screen object-cover bg-no-repeat"
+        />
+
+        <div
+          class="absolute bg-white rounded-lg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-2xl p-8 flex flex-col flex-start w-[95%] sm:w-[80%] md:w-[60%] lg:w-[40%]"
+          id="card"
+        >
+          <div>
+            <div>
+              <img
+                src="/my-node-app/public/images/bbps-logo.jpg"
+                alt="Bal Bharati Public School"
+                class="mx-auto mb-6"
+                id="bbps-logo"
+              />
+            </div>
+
+            <div
+              class="text-4xl text-center text-[#199D8D] my-3 font-semibold"
+              id="heading"
+            >
+              Add Event
+            </div>
+            <form method="POST" id="form1">
+              <div class="space-y-5">
+                <div>
+                  <label
+                    for="location"
+                    class="text-base font-medium text-gray-900"
+                  >
+                    Event Venue
+                  </label>
+                  <div class="mt-2">
+                    <input
+                      class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                      type="text"
+                      name="location"
+                      placeholder="Enter venue address"
+                      id="userLocation"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="organiser"
+                    class="text-base font-medium text-gray-900"
+                  >
+                    Organiser's Name
+                  </label>
+                  <div class="mt-2">
+                    <input
+                      class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                      type="text"
+                      name="organiser"
+                      placeholder="Enter organiser's name"
+                      id="organiser"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="date" class="text-base font-medium text-gray-900">
+                    Date (yyyy-mm-dd)
+                  </label>
+                  <div class="mt-2">
+                    <input
+                      class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                      type="text"
+                      name="date"
+                      placeholder="Enter date"
+                      id="date"
+                      pattern="\d{4}-\d{2}-\d{2}"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    for="description"
+                    class="text-base font-medium text-gray-900"
+                  >
+                    Description
+                  </label>
+                  <div class="mt-2">
+                    <textarea
+                      class="flex box h-32 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                      name="description"
+                      placeholder="Tell more about your event"
+                      id="description"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div
+                  id="error"
+                  class="text-red-600 text-base text-center"
+                ></div>
+
+                <div>
+                  <button
+                    type="submit"
+                    class="inline-flex box w-full items-center justify-center rounded-md px-3.5 py-2.5 font-semibold leading-7 text-white bg-[#d1d5db] transition-colors duration-300 hover:bg-[#199D8D]"
+                    id="submitBtn"
+                  >
+                    Add event
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative">
+      <img
+        src="images/vol-up.png"
+        class="volume-icon z-[30] h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeUpIcon"
+        alt="Volume Icon"
+      />
+
+      <img
+        src="images/vol-down.png"
+        class="volume-icon z-[30] hidden h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeDownIcon"
+        alt="Volume Icon"
+      />
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="animation.js"></script>
+
+    <script>
+      document
+        .getElementById("form1")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const location = document.getElementById("userLocation").value;
+          const organiser = document.getElementById("organiser").value;
+          const description = document.getElementById("description").value;
+          const date = document.getElementById("date").value;
+
+          const eventData = {
+            location: location,
+            organiser: organiser,
+            description: description,
+            date: date,
+          };
+
+          try {
+            const response = await fetch("http://localhost:3000/add-event", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(eventData),
+            });
+
+            if (!response.ok) {
+              throw new Error(`Server error: ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            if (result.success) {
+              alert("Event added successfully!");
+              window.location.href = "/my-node-app/public/events.html";
+            } else {
+              alert("Error submitting event.");
+              console.error(result);
+            }
+          } catch (error) {
+            console.error("Submission Error:", error);
+            alert(`There was a problem submitting the event: ${error.message}`);
+          }
+        });
+    </script>
+
+    <script>
+      const volumeUpIcon = document.getElementById("volumeUpIcon");
+
+      const volumeDownIcon = document.getElementById("volumeDownIcon");
+
+      const audio = document.getElementById("song");
+
+      volumeUpIcon.addEventListener("click", () => {
+        volumeUpIcon.classList.add("hidden");
+
+        volumeDownIcon.classList.remove("hidden");
+
+        audio.pause();
+      });
+
+      volumeDownIcon.addEventListener("click", () => {
+        volumeDownIcon.classList.add("hidden");
+
+        volumeUpIcon.classList.remove("hidden");
+
+        audio.play();
+      });
+
+      document.getElementById("song").volume = 0.4;
+    </script>
+  </body>
+</html>

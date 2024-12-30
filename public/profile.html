@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Add Profile - BBPS Alumni Community</title>
+
+    <link rel="stylesheet" href="output.css" />
+
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/webcam-easy@1.1.1/dist/webcam-easy.min.js"
+    ></script>
+
+    <style>
+      a {
+        display: block;
+
+        text-align: center;
+
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body class="h-screen bg-[#E2F3F1]" id="main">
+    <div
+      id="cursor"
+      class="h-[10px] w-[10px] fixed z-50 bg-black rounded-full"
+    ></div>
+
+    <div class="h-screen flex justify-center items-center" id="home-card">
+      <div class="my-auto flex flex-col justify-center items-center space-y-4">
+        <video
+          id="webCam"
+          autoplay
+          playsinline
+          class="box rounded-lg shadow-lg border-[#199D8D] border-8 border-solid"
+        ></video>
+
+        <canvas id="canvas" class="hidden"></canvas>
+
+        <a
+          onClick="takeAPicture()"
+          class="p-3 rounded-md box cursor-pointer bg-[#199D8D] text-[#FFDE00]"
+          >Click photo</a
+        >
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="animation.js"></script>
+
+    <script>
+      const webCamElement = document.getElementById("webCam");
+
+      const canvasElement = document.getElementById("canvas");
+
+      const webcam = new Webcam(webCamElement, "user", canvasElement);
+
+      webcam.start();
+
+      function takeAPicture() {
+        let picture = webcam.snap();
+
+        document.querySelector("a").href = picture;
+
+        let userDecision = prompt("Are you sure? type (y/n)");
+
+        userDecision = userDecision.toLowerCase();
+
+        if (userDecision === "y") {
+          localStorage.setItem("profilePicture", picture);
+
+          window.location.href = "/my-node-app/public/events.html";
+        } else {
+          alert("Please re-take the picture");
+        }
+      }
+
+      const profilePicture = localStorage.getItem("profilePicture");
+
+      if (profilePicture) {
+        const profileDiv = document.getElementById("profile-picture");
+
+        profileDiv.style.backgroundImage = `url(${profilePicture})`;
+
+        profileDiv.style.backgroundSize = "cover";
+
+        profileDiv.style.backgroundPosition = "center";
+      }
+
+      const volumeUpIcon = document.getElementById("volumeUpIcon");
+
+      const volumeDownIcon = document.getElementById("volumeDownIcon");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://bbpsgr.balbharati.org/wp-content/themes/balbhartisub/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="output.css" />
+
+    <title>About - BBPS Alumni Community</title>
+
+    <style>
+      @media (max-width: 768px) {
+        .creators-container {
+          display: flex;
+
+          flex-direction: column;
+
+          align-items: center;
+        }
+
+        .creator {
+          width: 100%;
+
+          margin-bottom: 20px;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .creators-container {
+          display: flex;
+
+          justify-content: space-around;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="h-screen cursor-none w-screen overflow-x-hidden scrollbar-w-1 scrollbar-thin scrollbar-track-[#199D8D] scrollbar-thumb-[#FFDE00]"
+    id="main"
+  >
+    <div
+      id="cursor"
+      class="h-[10px] w-[10px] fixed z-50 bg-black rounded-full"
+    ></div>
+
+    <audio id="song" autoplay loop>
+      <source src="song.mp3" />
+    </audio>
+
+    <header
+      class="flex box bg-[#199D8D] justify-between px-5 py-3 align-middle"
+    >
+      <div class="my-auto">
+        <a
+          href="events.html"
+          class="text-xl px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Events</a
+        >
+
+        &nbsp;
+
+        <a
+          href="network.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Network</a
+        >
+
+        &nbsp;
+
+        <a
+          href="crosstalk.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Crosstalk</a
+        >
+
+        &nbsp;
+
+        <a
+          href="videoGalore.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Video Galore</a
+        >
+        &nbsp;
+        <a
+          href="notableAlumnis.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Notable Alumnus</a
+        >
+        &nbsp;
+        <a
+          href="bbpsBugle.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >BBPS Bugle</a
+        >
+        &nbsp;
+        <a
+          href="meetup.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Let's Meet</a
+        >
+      </div>
+
+      <div>
+        <div
+          class="bg-white box text-black h-12 w-12 border-[#FFDE00] border-solid border-2 rounded-full"
+          id="profile-picture"
+        ></div>
+      </div>
+    </header>
+
+    <section class="bg-[#199D8D20] p-10">
+      <div>
+        <div>
+          <h1 class="text-6xl font-bold text-[#199D8D]" id="display-heading">
+            About us
+          </h1>
+        </div>
+
+        <div class="pr-16">
+          <div
+            class="mt-4 border-t border-4 border-solid border-[#FFDE00]"
+          ></div>
+
+          <div class="border-t border-4 border-solid border-[#199D8D]"></div>
+        </div>
+      </div>
+
+      <div class="mt-5 pr-16">
+        <p class="text-[#199D8D] text-lg">
+          Welcome to the BBPS Alumni Portal - a platform designed to keep the
+          Bal Bharati Public School (BBPS) community connected. Whether you're
+          looking to reconnect with old friends, stay informed about alumni
+          events, or network professionally, this portal is your gateway to
+          staying involved with the BBPS family.
+        </p>
+
+        <div class="mt-3">
+          <h3 class="text-3xl font-bold text-[#199D8D]">Our Mission</h3>
+
+          <p class="text-[#199D8D] text-lg">
+            This portal aims to strengthen the bond between BBPS alumni by
+            offering a space where graduates can come together, share memories,
+            and remain connected. Whether it's through attending school events
+            or engaging with fellow alumni on social media, we provide a simple
+            way to stay in touch with the school and each other.
+          </p>
+        </div>
+
+        <div class="mt-3">
+          <h3 class="text-3xl font-bold text-[#199D8D]">What We Offer</h3>
+
+          <p class="text-[#199D8D] text-lg">
+            • Networking Made Easy: Connect with your fellow alumni through
+            social media links, making it easy to maintain professional and
+            personal connections. <br />
+
+            • Events & Reunions: Stay updated on upcoming alumni events,
+            reunions, and other gatherings. Whether in-person or virtual, our
+            events offer opportunities to reconnect and engage with the BBPS
+            community.
+          </p>
+        </div>
+
+        <div class="mt-3">
+          <h3 class="text-3xl font-bold text-[#199D8D]">Stay Connected</h3>
+
+          <p class="text-[#199D8D] text-lg">
+            The BBPS Alumni Portal is more than just a website—it's a space
+            where memories are relived, friendships are rekindled, and new
+            connections are made. We invite you to stay involved, attend events,
+            and keep the BBPS spirit alive!
+          </p>
+        </div>
+
+        <p class="text-[#199D8D] text-lg">
+          This version keeps the focus on the core features of your
+          portal—events and social media-based networking—while maintaining a
+          welcoming tone for your users.
+        </p>
+      </div>
+
+      <div class="mt-7 creator">
+        <div>
+          <h1 class="text-6xl font-bold text-[#199D8D]">About Creators</h1>
+        </div>
+
+        <div class="pr-16">
+          <div
+            class="mt-4 border-t border-4 border-solid border-[#FFDE00]"
+          ></div>
+
+          <div class="border-t border-4 border-solid border-[#199D8D]"></div>
+        </div>
+      </div>
+
+      <div class="my-7 creators-container">
+        <div
+          class="creator bg-[#199D8D25] shadow-xl p-5 rounded-xl flex flex-col align-middle justify-start"
+        >
+          <div class="flex w-full justify-center">
+            <img
+              src="images/dhruvin.jpg"
+              alt="Dhruvin Solanki"
+              class="h-36 w-36 rounded-full"
+            />
+          </div>
+
+          <div class="mt-4">
+            <h3 class="text-[#199D8D] font-bold text-2xl text-center">
+              Dhruvinsinh Solanki
+            </h3>
+
+            <p class="text-center">Student at BBPS Jhanor (Std-XII)</p>
+          </div>
+        </div>
+
+        <div
+          class="creator bg-[#199D8D25] shadow-xl p-5 rounded-xl flex flex-col align-middle justify-center"
+        >
+          <div class="flex w-full justify-center">
+            <img
+              src="images/harshit.jpg"
+              alt="Harshit Sharma"
+              class="h-36 w-36 rounded-full"
+            />
+          </div>
+
+          <div class="mt-4">
+            <h3 class="text-[#199D8D] font-bold text-2xl text-center">
+              Harshit Sharma
+            </h3>
+
+            <p class="text-center">Student at BBPS Jhanor (Std-X)</p>
+          </div>
+        </div>
+
+        <div
+          class="creator bg-[#199D8D25] shadow-xl p-5 rounded-xl flex flex-col align-middle justify-center"
+        >
+          <div class="flex w-full justify-center">
+            <img
+              src="images/shish.jpg"
+              alt="Shish Fruitwala"
+              class="h-36 w-36 rounded-full"
+            />
+          </div>
+
+          <div class="mt-4">
+            <h3 class="text-[#199D8D] font-bold text-2xl text-center">
+              Shish Fruitwala
+            </h3>
+
+            <p class="text-center">Student at BBPS Jhanor (Std-X)</p>
+
+            <a href="https://github.com/C0nfu5ing-5pring" target="_blank">
+              <img
+                src="images/github-logo.png"
+                alt="Shish Fruitwala Github Profile"
+                class="h-10 mx-auto"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative">
+      <img
+        src="images/vol-up.png"
+        class="volume-icon z-[30] h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeUpIcon"
+        alt="Volume Icon"
+      />
+
+      <img
+        src="images/vol-down.png"
+        class="volume-icon z-[30] hidden h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeDownIcon"
+        alt="Volume Icon"
+      />
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./animation.js"></script>
+
+    <script>
+      const profilePicture = localStorage.getItem("profilePicture");
+
+      if (profilePicture) {
+        const profileDiv = document.getElementById("profile-picture");
+
+        profileDiv.style.backgroundImage = `url(${profilePicture})`;
+
+        profileDiv.style.backgroundSize = "cover";
+
+        profileDiv.style.backgroundPosition = "center";
+      }
+
+      const volumeUpIcon = document.getElementById("volumeUpIcon");
+
+      const volumeDownIcon = document.getElementById("volumeDownIcon");
+
+      const audio = document.getElementById("song");
+
+      volumeUpIcon.addEventListener("click", () => {
+        volumeUpIcon.classList.add("hidden");
+
+        volumeDownIcon.classList.remove("hidden");
+
+        audio.pause();
+      });
+
+      volumeDownIcon.addEventListener("click", () => {
+        volumeDownIcon.classList.add("hidden");
+
+        volumeUpIcon.classList.remove("hidden");
+
+        audio.play();
+      });
+
+      document.getElementById("song").volume = 0.4;
+    </script>
+  </body>
+</html>

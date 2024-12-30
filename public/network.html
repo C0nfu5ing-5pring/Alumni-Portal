@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://bbpsgr.balbharati.org/wp-content/themes/balbhartisub/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <title>Network - BBPS Alumni Community</title>
+    <style>
+      @media (max-width: 640px) {
+        h1 {
+          font-size: 2rem;
+        }
+        .pr-16 {
+          padding-right: 0.5rem;
+        }
+        .text-xl {
+          font-size: 1.125rem;
+        }
+        header div {
+          display: flex;
+          justify-content: center;
+        }
+      }
+      @media (min-width: 641px) and (max-width: 1024px) {
+        h1 {
+          font-size: 4rem;
+        }
+        .pr-16 {
+          padding-right: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#E0F2EF] h-screen cursor-none w-screen overflow-x-hidden]"
+    id="main"
+  >
+    <div
+      id="cursor"
+      class="h-[10px] w-[10px] fixed z-50 bg-black rounded-full"
+    ></div>
+
+    <audio id="song" autoplay loop>
+      <source src="song.mp3" />
+    </audio>
+
+    <header class="flex bg-[#199D8D] justify-between px-5 py-3 align-middle">
+      <div class="my-auto">
+        <a
+          href="about.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >About us</a
+        >
+        &nbsp;&nbsp;
+        <a
+          href="events.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Events</a
+        >
+        &nbsp;&nbsp;
+        <a
+          href="crosstalk.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Crosstalk</a
+        >
+        &nbsp;&nbsp;
+        <a
+          href="videoGalore.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Video Galore</a
+        >
+        &nbsp;&nbsp;
+        <a
+          href="notableAlumnis.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Notable Alumnus</a
+        >
+        &nbsp;&nbsp;
+        <a
+          href="bbpsBugle.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >BBPS Bugle</a
+        >
+        &nbsp;&nbsp;
+        <a
+          href="meetup.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Let's Meet</a
+        >
+      </div>
+      <div>
+        <div
+          class="bg-white box text-black h-12 w-12 border-[#FFDE00] border-solid border-2 rounded-full"
+          id="profile-picture"
+        ></div>
+      </div>
+    </header>
+
+    <section class="bg-[#199D8D20] p-10 w-screen">
+      <div>
+        <div class="pr-16" id="display-heading">
+          <h1 class="text-6xl font-bold text-[#199D8D]">Network with Others</h1>
+        </div>
+        <div class="pr-16">
+          <div
+            class="mt-4 border-t border-4 border-solid border-[#FFDE00]"
+          ></div>
+          <div class="border-t border-4 border-solid border-[#199D8D]"></div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="user-list"
+      class="p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10 px-6 md:px-12 lg:px-16"
+    ></div>
+
+    <div class="relative">
+      <img
+        src="images/vol-up.png"
+        class="volume-icon z-[30] h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeUpIcon"
+        alt="Volume Icon"
+      />
+
+      <img
+        src="images/vol-down.png"
+        class="volume-icon z-[30] hidden h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeDownIcon"
+        alt="Volume Icon"
+      />
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const profilePicture = localStorage.getItem("profilePicture");
+      if (profilePicture) {
+        const profileDiv = document.getElementById("profile-picture");
+        profileDiv.style.backgroundImage = `url(${profilePicture})`;
+        profileDiv.style.backgroundSize = "cover";
+        profileDiv.style.backgroundPosition = "center";
+      }
+
+      const volumeUpIcon = document.getElementById("volumeUpIcon");
+      const volumeDownIcon = document.getElementById("volumeDownIcon");
+      const audio = document.getElementById("song");
+
+      volumeUpIcon.addEventListener("click", () => {
+        volumeUpIcon.classList.add("hidden");
+        volumeDownIcon.classList.remove("hidden");
+        audio.pause();
+      });
+
+      volumeDownIcon.addEventListener("click", () => {
+        volumeDownIcon.classList.add("hidden");
+        volumeUpIcon.classList.remove("hidden");
+        audio.play();
+      });
+
+      document.getElementById("song").volume = 0.05;
+    </script>
+    <script src="animation.js"></script>
+
+    <script src="fetchNetwork.js"></script>
+  </body>
+</html>

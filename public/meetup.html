@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://bbpsgr.balbharati.org/wp-content/themes/balbhartisub/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <title>Let's Meetup - BBPS Alumni Communitys</title>
+  </head>
+  <body id="main" class="bg-[#E0F2EF] overflow-x-hidden">
+    <div
+      id="cursor"
+      class="h-[10px] w-[10px] fixed z-50 bg-black rounded-full"
+    ></div>
+
+    <audio id="song" autoplay loop>
+      <source src="song.mp3" />
+    </audio>
+
+    <header class="flex bg-[#199D8D] justify-between px-5 py-3 align-middle">
+      <div class="my-auto">
+        <a
+          href="about.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >About us</a
+        >
+        &nbsp;
+        <a
+          href="events.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Events</a
+        >
+        &nbsp;
+        <a
+          href="network.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Network</a
+        >
+        &nbsp;
+        <a
+          href="crosstalk.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Crosstalk</a
+        >
+        &nbsp;
+        <a
+          href="videoGalore.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Video Galore</a
+        >
+        &nbsp;
+        <a
+          href="notableAlumnis.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >Notable Alumnus</a
+        >
+        &nbsp;
+        <a
+          href="bbpsBugle.html"
+          class="text-xl box px-2 py-1 bg-[#FFDE00] hover:shadow-2xl text-black shadow-black rounded-md"
+          >BBPS Bugle</a
+        >
+      </div>
+      <div>
+        <div
+          class="bg-white box text-black h-12 w-12 border-[#FFDE00] border-solid border-2 rounded-full"
+          id="profile-picture"
+        ></div>
+      </div>
+    </header>
+
+    <section class="bg-[#199D8D20] p-10">
+      <div>
+        <div class="flex justify-between pr-16">
+          <h1 class="text-6xl font-bold text-[#199D8D]" id="display-heading">
+            Let's Meet
+          </h1>
+
+          <a
+            class="box px-2 py-0 bg-[#199D8D] rounded-xl flex items-center text-[#FFDE00] text-lg"
+            href="ameetup.html"
+            id="available-meetups"
+          >
+            Available Offline Meetups
+          </a>
+        </div>
+
+        <div class="pr-16">
+          <div
+            class="mt-4 border-t border-4 border-solid border-[#FFDE00]"
+          ></div>
+
+          <div class="border-t border-4 border-solid border-[#199D8D]"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-screen grid grid-cols-2">
+      <section
+        id="left-section"
+        class="flex bg-[#199D8D95] border-solid border-[#199D8D] border-r-[1px] border-t-2 justify-center items-center"
+      >
+        <div
+          class="absolute rounded-lg bg-white shadow-2xl p-8 flex flex-col flex-start"
+          id="card"
+        >
+          <div>
+            <div>
+              <img
+                src="/my-node-app/public/images/bbps-logo.jpg"
+                alt="Bal Bharati Public School"
+                class="w-full h-auto"
+                id="bbps-logo"
+              />
+            </div>
+
+            <div
+              class="text-4xl text-center text-[#199D8D] my-3 font-semibold"
+              id="heading"
+            >
+              Offline Meet
+            </div>
+
+            <form class="mt-3" id="form">
+              <div class="space-y-5">
+                <div>
+                  <label for="name" class="text-base font-medium text-gray-900"
+                    >Name</label
+                  >
+
+                  <div class="mt-2">
+                    <input
+                      class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                      type="text"
+                      placeholder="Enter your name"
+                      id="name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between">
+                    <label
+                      for="city"
+                      class="text-base font-medium text-gray-900"
+                      >City</label
+                    >
+                  </div>
+
+                  <div class="mt-2">
+                    <input
+                      class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                      type="text"
+                      placeholder="Enter a city name"
+                      id="city"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between">
+                    <label
+                      for="s_date"
+                      class="text-base font-medium text-gray-900"
+                      >Start date (yyyy-mm-dd)</label
+                    >
+                  </div>
+
+                  <div class="mt-2">
+                    <input
+                      class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                      type="text"
+                      placeholder="Enter starting date"
+                      id="s_date"
+                      required
+                      pattern="\d{4}-\d{2}-\d{2}"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between">
+                    <label
+                      for="e_date"
+                      class="text-base font-medium text-gray-900"
+                      >End date (yyyy-mm-dd)</label
+                    >
+                  </div>
+
+                  <div class="mt-2">
+                    <input
+                      class="flex box h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#199D8D] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                      type="text"
+                      placeholder="Enter ending date"
+                      id="e_date"
+                      required
+                      pattern="\d{4}-\d{2}-\d{2}"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    class="inline-flex box w-full items-center justify-center rounded-md px-3.5 py-2.5 font-semibold leading-7 text-white bg-[#d1d5db] transition-colors duration-300 hover:bg-[#199D8D]"
+                    id="submitBtn"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section
+        id="right-section"
+        class="flex bg-[#199D8D75] border-solid border-[#199D8D] border-l-[1px] border-t-2 justify-center items-center"
+      >
+        <div
+          class="absolute rounded-lg bg-white shadow-2xl p-8 flex flex-col flex-start"
+          id="card"
+        >
+          <div>
+            <div>
+              <img
+                src="/my-node-app/public/images/bbps-logo.jpg"
+                alt="Bal Bharati Public School"
+                class="w-full h-auto"
+                id="bbps-logo"
+              />
+            </div>
+
+            <div
+              class="text-4xl text-center text-[#199D8D] my-3 font-semibold"
+              id="heading"
+            >
+              Online Meet
+            </div>
+
+            <form class="mt-3" id="form">
+              <div class="space-y-5">
+                <div class="timer-container">
+                  <h1
+                    class="text-[#188D8D] font-bold text-xl text-center"
+                    id="meetLabel"
+                  >
+                    Meeting begins in
+                  </h1>
+                  <div id="timer" class="font-bold text-center">
+                    <span id="days">01</span> Days :
+                    <span id="hours">00</span> Hours :
+                    <span id="minutes">00</span> Minutes :
+                    <span id="seconds">00</span> Seconds
+                  </div>
+                </div>
+
+                <div class="flex justify-center">
+                  <a
+                    id="submitBtnOnline"
+                    href="https://meet.google.com/ena-zour-xhe"
+                    target="_blank"
+                    class="items-center justify-center text-[#FFDE00] font-bold rounded-md px-3.5 py-2.5 hidden transition-colors duration-300"
+                    aria-disabled="true"
+                  >
+                    Join Meeting
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="relative">
+      <img
+        src="images/vol-up.png"
+        class="volume-icon z-[30] h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeUpIcon"
+        alt="Volume Icon"
+      />
+
+      <img
+        src="images/vol-down.png"
+        class="volume-icon z-[30] hidden h-10 w-10 bg-[#199D8D90] rounded-lg fixed bottom-2 right-2 sm:h-10 sm:w-10 md:h-10 md:w-10 lg:h-10 lg:w-10"
+        id="volumeDownIcon"
+        alt="Volume Icon"
+      />
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const btn = document.getElementById("submitBtnOnline");
+      const timerElement = document.getElementById("timer");
+
+      const countdownTime = 1 * 24 * 60 * 60 * 1000;
+
+      const endTime = new Date().getTime() + countdownTime;
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const remaining = endTime - now;
+
+        const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (remaining % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").innerText = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").innerText = String(minutes).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("seconds").innerText = String(seconds).padStart(
+          2,
+          "0"
+        );
+
+        if (remaining <= 0) {
+          clearInterval(timerInterval);
+          document.getElementById("meetLabel").style.display = "none";
+          timerElement.innerHTML = "You can now Join the Meeting";
+          enableButton();
+        }
+      }
+
+      function enableButton() {
+        btn.classList.remove("hidden");
+        btn.classList.add("bg-[#199D8D]", "hover:bg-[#188D8D]");
+        btn.removeAttribute("aria-disabled");
+      }
+
+      const timerInterval = setInterval(updateTimer, 1000);
+
+      const profilePicture = localStorage.getItem("profilePicture");
+      if (profilePicture) {
+        const profileDiv = document.getElementById("profile-picture");
+        profileDiv.style.backgroundImage = `url(${profilePicture})`;
+        profileDiv.style.backgroundSize = "cover";
+        profileDiv.style.backgroundPosition = "center";
+      }
+
+      const volumeUpIcon = document.getElementById("volumeUpIcon");
+      const volumeDownIcon = document.getElementById("volumeDownIcon");
+      const audio = document.getElementById("song");
+
+      volumeUpIcon.addEventListener("click", () => {
+        volumeUpIcon.classList.add("hidden");
+        volumeDownIcon.classList.remove("hidden");
+        audio.pause();
+      });
+
+      volumeDownIcon.addEventListener("click", () => {
+        volumeDownIcon.classList.add("hidden");
+        volumeUpIcon.classList.remove("hidden");
+        audio.play();
+      });
+
+      document.getElementById("song").volume = 0.4;
+    </script>
+
+    <script>
+      document
+        .getElementById("form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const city = document.getElementById("city").value;
+          const s_date = document.getElementById("s_date").value;
+          const e_date = document.getElementById("e_date").value;
+
+          const offlineMeetData = {
+            name: name,
+            city: city,
+            s_date: s_date,
+            e_date: e_date,
+          };
+
+          try {
+            const response = await fetch("http://localhost:3000/meetup", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(offlineMeetData),
+            });
+
+            if (!response.ok) {
+              throw new Error(`Server error: ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            if (result.success) {
+              alert("Data added successfully!");
+              location.reload();
+            } else {
+              alert("Error submitting data.");
+              console.error(result);
+            }
+          } catch (error) {
+            console.error("Submission Error:", error);
+            alert(`There was a problem submitting data: ${error.message}`);
+          }
+        });
+    </script>
+    <script src="animation.js"></script>
+  </body>
+</html>
